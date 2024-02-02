@@ -6,16 +6,13 @@
 
 :root{
 
+    --default-dark-gray: #505050; /* Definindo uma cor cinza mais escura */
     --default-gray: rgb(85,85,85);
     --default-cian: rgb(22,240,232);
     --default-white: #cecece;
-
-
 }
 
 body{
-    /* width: 100%; */
-    /* height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,8 +45,6 @@ body{
 
     border: none;
     background: transparent;
-    /* border-radius: 150px; */
-    
     
     border-radius: 50%;
 
@@ -59,6 +54,22 @@ body{
     color: var(--default-white);
 
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.
+}
+
+.calc-btn:hover{
+    box-shadow:  3px 3px 45px #373737,
+    -2px -2px 20px var(--default-cian);
+    
+    background-color: var(--default-cian);
+    color:var(--default-gray);
+}
+
+.calc-btn:active {
+    transform: scale(0.95);
+    box-shadow: 2px 2px 15px #373737, -1px -1px 10px var(--default-cian);
+    background-color: var(--default-dark-cian); /* Altera para uma cor um pouco mais escura para o efeito pressionado */
+    color: var(--default-light-gray); /* Opcional: muda a cor do texto se necessário */
 }
 
 .esp{
@@ -68,6 +79,22 @@ body{
 #equals-btn{
     color: var(--default-gray);
     background-color: var(--default-cian);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+#equals-btn:hover{
+    color: var(--default-cian);
+    background-color: var(--default-gray);
+}
+
+#equals-btn:active {
+    transform: scale(0.95); /* Reduz ligeiramente o tamanho para simular pressionamento */
+    box-shadow: inset 0 0 5px var(--default-dark-cian); /* Adiciona um efeito de sombra interna para profundidade */
+    color: var(--default-gray);
+    background-color: var(--default-cian);
+    
+
 }
 
 #display{
@@ -79,5 +106,18 @@ body{
     align-items: center;
 
     color: var(--default-white);
-    /* background-color: red; */
+}
+
+.noselect {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Edge */
+    user-select: none;         /* Padrão */
+}
+
+@media (min-width: 600px) {
+    
+    *{
+        font-size: 24px;
+    }
 }
